@@ -1,0 +1,249 @@
+/*
+ * HTML5 Boilerplate
+ *
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+body {
+    background: white;
+    margin-top: 1% ;
+    margin-bottom: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images and the bottom of their containers: h5bp.com/i/440
+ */
+
+img {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Chrome Frame prompt
+   ========================================================================== */
+
+.chromeheader {
+
+    background: #F0F0F0;
+    padding-top: 5px;
+    padding-right: 30px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    margin-top:0px;
+}
+.chromebody {
+    background: #F5F5F5;
+    margin: 0px 950px 15px 75px;
+    margin-top: 0px;
+    border-radius: 0px 1px 1px 0px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-right: 30px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    margin: 0px 20px 0px 20px; 
+    border-radius: 1px;
+    border-width: 1px;
+
+}
+
+.div3 {
+    display: block;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left:20px;
+    margin: 0px 200px 15px 20px;
+
+}
+
+.div2 {
+    display: block;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left:20px;
+    margin: 0px 950px 15px 20px;
+
+}
+#header {
+    background-color:#DADADA;
+    height: auto;
+    color:white;
+    text-align:center;
+    padding:5px;
+    display: block;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 20px;
+    border-radius: 3px;
+    top: 5px;
+}
+#footer {
+
+    background-color: #DADADA;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;
+    border-radius: 3px;
+}
+#wrapper {
+    width: 100%;
+    background-color: #FFFFFF ;
+    padding-left: 10px;
+    padding-right: 10px;
+    bottom: 0px;
+    border-radius: 3px;
+    margin: 10px;
+
+}
+
+#nav {
+    background-color:white;
+    height:600px;
+    width:895px;
+    float:left;
+
+}
+#section {
+    width:350px;
+    height:600px;
+    float:left;
+    padding:10px;	 	 
+}
+
+#student {
+    background-color: white;
+    height:200px;
+    width:890px;
+    float:left;
+    padding:5px;
+    padding:15px;
+    border-radius:3px;
+    box-shadow:5px 5px 5px rgba(0,0,0,0.15);
+    background:#fff;
+
+}
+#studentInfo{
+    background-color: white;
+    height:300px;
+    width:890px;
+    float:left;
+    padding:5px; 
+    
+
+}
+
+#academic {
+    background-color:#eeeeee;
+    height:600px;
+    width:500px;
+    float:right;
+    padding:5px;
+}
+/*----- Tabs -----*/
+.tabs {
+    width:100%;
+    display:inline-block;
+}
+
+/*----- Tab Links -----*/
+/* Clearfix */
+.tab-links:after {
+    display:block;
+    clear:both;
+    content:'';
+}
+
+.tab-links li {
+    margin:0px 5px;
+    float:left;
+    list-style:none;
+}
+
+.tab-links a {
+    padding:9px 15px;
+    display:inline-block;
+    border-radius:3px 3px 0px 0px;
+    background:#C0C0C0;
+    font-size:16px;
+    font-weight:600;
+    color:#4c4c4c;
+    transition:all linear 0.15s;
+}
+
+.tab-links a:hover {
+    background:#F0F0F0;
+    text-decoration:none;
+}
+
+li.active a, li.active a:hover {
+    background:#fff;
+    color:#C0C0C0;
+}
+
+/*----- Content of Tabs -----*/
+.tab-content {
+    padding:15px;
+    border-radius:3px;
+    box-shadow:5px 5px 5px rgba(0,0,0,0.15);
+    background:#fff;
+}
+
+.tab {
+    display:none;
+}
+
+.tab.active {
+    display:block;
+}
+
+
+
