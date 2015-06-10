@@ -237,6 +237,16 @@ li.active a, li.active a:hover {
     background:#fff;
 }
 
+.tab-content1 {
+    padding:15px;
+    border-radius:3px;
+    box-shadow:5px 5px 5px rgba(0,0,0,0.15);
+    background:#fff;
+    overflow: scroll;
+    height: 150px;
+    
+}
+
 .tab {
     display:none;
 }
