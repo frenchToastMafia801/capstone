@@ -1,55 +1,166 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+	$(function () {
+	    $('#container4').highcharts({
+	        title: {
+	            text: 'Reading Comprehension',
+	            x: -20 //center
+	        },
+	        subtitle: {
+	            text: 'Source: Utah Schools',
+	            x: -20
+	        },
+	        xAxis: {
+	            categories: ['2nd Grade', '3rd Grade', '4th Grade', '5th Grade', '6th Grade',
+	                '7th Grade', '8th Grade', '9th Grade', '10th Grade', '11th Grade', '12th Grade']
+	        },
+	        yAxis: {
+	            title: {
+	                text: 'Reading Comprehension Score(0-100)'
+	            },
+	            plotLines: [{
+	                value: 0,
+	                width: 1,
+	                color: '#808080'
+	            }]
+	        },
+	        tooltip: {
+	            valueSuffix: '%'
+	        },
+	        legend: {
+	            layout: 'vertical',
+	            align: 'right',
+	            verticalAlign: 'middle',
+	            borderWidth: 0
+	        },
+	        series: [{
+	            name: 'High Range',
+	            data: [50, 59, 73, 76, 82, 84, 87, 89, 90, 93]
+	        }, {
+	            name: 'Student Score',
+	            data: [33, 40, 45, 65, 70, 75, 85, 90, 91, 95]
+	        }, {
+	            name: 'Low Range',
+	            data: [32, 42, 55, 55, 63, 66, 69, 71, 73, 74]
+	        }]
+	    });
+	});
+        
+        $(function  () {
+        Highcharts.Renderer.prototype.symbols.line = function(x, y, width, height) {
+    return ['M',x ,y + width / 2,'L',x+height,y + width / 2];
+};
+//-------------------------------------------------------
+Highcharts.setOptions({
+    chart:{
+        type:'bar',
+        margin:[5,15,10,100],
+    },
+    credits:{enabled:false},
+    exporting:{enabled:false},
+    legend:{enabled:false},
+    title:{text:''},
+    xAxis:{
+        tickLength:0,
+        lineColor:'#999',
+        lineWidth:1,
+        labels:{style:{fontWeight:'bold'}}        
+    },
+    yAxis:{
+        min:0,
+        minPadding:0,
+        maxPadding:0,
+        tickColor:'#ccc',
+        tickWidth:1,
+        tickLength:3,
+        gridLineWidth:0,
+        endOnTick:true,
+        title:{text: ''},
+        labels:{
+            y:10,
+            style:{
+                fontSize:'8px'
+            },
+            formatter:function(){
+                if (this.isLast){
+                    return this.value + ' %';
+                }
+                else{
+                    return this.value;
+                }
+            }
+        }
+    },
+    tooltip:{
+        enabled:true,
+        backgroundColor:'rgba(255, 255, 255, .85)',
+        borderWidth:0,
+        shadow:true,
+        style:{fontSize:'10px',padding:2},
+        formatter:function() {
+           return this.series.name + ": <strong>" + Highcharts.numberFormat(this.y,2) + "</strong>";
+        }
+    },
+    plotOptions:{
+        bar:{
+            color:'#000',
+            shadow:false,
+            borderWidth:0,
+        },
+        scatter:{
+            marker:{
+                symbol:'line',
+                lineWidth:3,
+                radius:8,
+                lineColor:'#000'
+            }
+        }
+    }
+});
 
-google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('date', 'Date');
-        data.addColumn('number', 'Reading Comprehension');
-        data.addColumn('string', 'Reading title');
-        data.addColumn('string', 'Reading text');
-        data.addColumn('number', 'Reading Instruction');
-        data.addColumn('string', 'Reading text1');
-        data.addColumn('number', 'Reading Frustration');
-        data.addColumn('string', 'Reading title');
-        data.addColumn('string', 'Reading text');
-                
-data.addRows([
-          [new Date(2008, 2, 15), 6, undefined, undefined,
-                                  7, undefined, undefined,
-	                        	  6, undefined, undefined],
-    
-          [new Date(2009, 2, 16), 5, undefined, undefined,
-                                  4, undefined, undefined,
-			                      5, undefined, undefined]
-    
-          [new Date(2010, 2, 17), 8, undefined, undefined,
-                                  7, undefined, undefined,
-			                      6, undefined, undefined],
+//-------------------------------------------------------
+var chart1 = new Highcharts.Chart({
+    chart:{renderTo:'container1'},
+    xAxis:{categories:['Math']},
+    yAxis:{
+        max:100,
+        labels:{y:10,style:{fontSize:'8px'}},    
+        plotBands:[{from:0,to:60,color: 'rgba(103,103,103,.55)'},
+                   {from:60,to:100,color: 'rgba(204,204,204,.55)'},
+                   {from:85,to:100,color: 'rgba(204,204,204,0)'}]
+    },
+    series:[{name:'Measure',pointWidth:10,data:[75]},
+            {name:'Target',type: 'scatter',data:[80],}]
+});
 
-          [new Date(2011, 2, 18), 5, undefined, undefined,
-                                  4, undefined, undefined,
-			                      8, undefined, undefined],
+//-------------------------------------------------------
+var chart2 = new Highcharts.Chart({
+    chart:{renderTo:'container2'},
+    xAxis:{categories:['Science']},
+    yAxis:{
+        max:100,
+        labels:{y:10,style:{fontSize:'8px'}},   
+        plotBands:[{from:0,to:75,color: 'rgba(103,103,103,.35)'},
+                   {from:75,to:90,color: 'rgba(153,153,153,.35)'},
+                   {from:90,to:100,color: 'rgba(204,204,204,.35)'}]
+    },
+    series:[{name:'Measure',pointWidth:10,data:[92]},
+            {name:'Target',type: 'scatter',data:[95],}]
+});
 
-          [new Date(2012, 2, 19), 6, undefined, undefined,
-                                  5, undefined, undefined,
-			                      4, undefined, undefined],
+//-------------------------------------------------------
+var chart3 = new Highcharts.Chart({
+    chart:{renderTo:'container3'},
+    xAxis:{categories:['Arts']},
+    yAxis:{
+        max:100,
+        labels:{y:10,style:{fontSize:'8px'}},   
+        plotBands:[{from:0,to:50,color: 'rgba(103,103,103,.35)'},
+                   {from:50,to:75,color: 'rgba(153,153,153,.35)'},
+                   {from:75,to:100,color: 'rgba(204,204,204,.35)'}]
+    },
+    series:[{name:'Measure',pointWidth:10,data:[64]},
+            {name:'Target',type: 'scatter',data:[75],}]
+});
 
-          [new Date(2013, 2, 20), 9, undefined, undefined,
-                                  6, undefined, undefined,
-		                          8, undefined, undefined],
 
-        ]);
 
-        var chart = new google.visualization.AnnotationChart(document.getElementById('chart_div'));
-
-        var options = {
-          displayAnnotations: false
-        };
-
-        chart.draw(data, options);
-      }
-
+        });
