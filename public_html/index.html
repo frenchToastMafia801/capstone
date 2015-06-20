@@ -5,18 +5,34 @@
     <title></title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    
-    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script type = 'text/javascript' src='googleGraphs.js'></script>
-    
-    
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    
     <script src="http://code.highcharts.com/highcharts.js"></script>
     <script src="http://code.highcharts.com/highcharts-more.js"></script>
     <script src="http://code.highcharts.com/modules/exporting.js"></script>
-    
+    <script>
+        //checking to see if the document is ready 
+        jQuery(document).ready(function() {
+            //check to see if user clicked on the tab
+             jQuery('.tabs .tab-links a').on('click', function(e)  {
+                 ////current attribute value that grabs the href="" of the clicked anchor link
+                var currentAttrValue = jQuery(this).attr('href');
+ 
+                 // Show/Hide Tabs
+                 //if .tabs has a child witn an #id that matches a .tabk-link href="", then they should be linked
+                 //then show the elements that refers to the #ids, "such as #tab2"
+                 //then find other tabs  (the siblings) and hide them
+                jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
+ 
+                // Change/remove current tab to active
+                //find the active parent tab and hide it once the child is clicked
+                jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
+                // this removes the #id in the address bar
+                e.preventDefault();
+    });
+});
+    </script>
     
     
     
@@ -29,7 +45,7 @@
     <div id="nav">
         <div class="tabs">
             <ul class="tab-links">
-                <li><p>Student</p></li>
+        
                 <li class="active"><a href="#tab1">Student Information</a></li>
                 <li><a href="#tab2">Enrollment</a></li>
                 <li><a href="#tab3">Groups</a></li>
@@ -38,7 +54,7 @@
 
             <div class="tab-content">
                 <div id="tab1" class="tab active">
-                    <img src="img/cat.JPG" alt="image" height="230" width="200">
+                    <img src="img/cat.JPG" alt="image" height="130" width="110">
                     
                     <table class="table1">
                         <tr>
@@ -66,7 +82,11 @@
                 </div>
 
                 <div id="tab2" class="tab">
-                    <p>Tab #2 content goes here!</p>
+                    <p>Tab #2 Enrollment stuff goes here!</p>
+                    <p>Stuff..</p>
+                </div>
+                 <div id="tab3" class="tab">
+                    <p>Tab #3 Groups stuff goes here!</p>
                     <p>Stuff..</p>
                 </div>
             </div>
@@ -75,25 +95,34 @@
 
          <div class="tabs">
             <ul class="tab-links">
-                <li><p>Avila Elementary</p></li>
+            
                 <li class="active"><a href="#tab4">Term 1</a></li>
                 <li><a href="#tab5">Term 2</a></li>
                 <li><a href="#tab6">Term 3</a></li>
 
             </ul>
       <div class="tab-content1">
-                <div id="tab4" class="tab active">
-                    
+                <div id="tab4" class="tab">
+                    <p>Tab #4 Term stuff goes here!</p>
+                    <p>Stuff..</p>
+                </div>
+                <div id="tab5" class="tab">
+                    <p>Tab #5 Term stuff goes here!</p>
+                    <p>Stuff..</p>
+                </div>
+                <div id="tab6" class="tab">
+                    <p>Tab #6 Term stuff goes here!</p>
+                    <p>Stuff..</p>
                 </div>
       </div>
         </div>
     </div>
 
     <div id="academic">  
-        <div id="container1" style="border:solid;height:66px;width:495px;"></div> 
-        <div id="container2" style="border:solid;height:66px;width:495px;"></div>
-        <div id="container3" style="border:solid;height:66px;width:495px;"></div>
-        <div id="container4" style="border:solid;height:350px;width:495px;"></div>
+        <div id="container1"></div> 
+        <div id="container2"></div>
+        <div id="container3"></div>
+        <div id="container4"></div>
     </div>   
 
     <div id="footer">

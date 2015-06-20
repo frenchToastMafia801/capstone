@@ -24,6 +24,7 @@ body {
     margin-bottom: 1%;
     margin-left: 5%;
     margin-right: 5%;
+    //width: 1000px;
 }
 /*
  * A better looking default horizontal rule
@@ -135,7 +136,7 @@ textarea {
     border-radius: 3px;
 }
 #wrapper {
-    width: 100%;
+    width: 895px;
     background-color: #FFFFFF ;
     padding-left: 10px;
     padding-right: 10px;
@@ -188,6 +189,31 @@ textarea {
     float:right;
     padding:5px;
 }
+
+#container1 {
+
+    height:66px;
+    width:495px;
+}
+
+#container2 {
+
+    height:66px;
+    width:495px;
+}
+
+#container3 {
+   
+    height:66px;
+    width:495px;
+}
+
+#container4 {
+  
+    height:350px;
+    width:495px;
+}
+
 /*----- Tabs -----*/
 .tabs {
     width:100%;
@@ -203,16 +229,17 @@ textarea {
 }
 
 .tab-links li {
-    margin:0px 5px;
+    margin:0px 0px;
     float:left;
     list-style:none;
 }
 
 .tab-links a {
-    padding:9px 15px;
+    padding:5px 5px;
     display:inline-block;
-    border-radius:3px 3px 0px 0px;
+    border-radius:0px03px 0px 0px;
     background:#C0C0C0;
+    margin: 0;
     font-size:16px;
     font-weight:600;
     color:#4c4c4c;
@@ -243,7 +270,7 @@ li.active a, li.active a:hover {
     box-shadow:5px 5px 5px rgba(0,0,0,0.15);
     background:#fff;
     overflow: scroll;
-    height: 150px;
+    height: 250px;
     
 }
 
