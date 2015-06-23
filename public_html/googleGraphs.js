@@ -1,5 +1,7 @@
-	$(function () {
-	    $('#container4').highcharts({
+	/*readingCompArray is the parameter for the reading comp scores */
+        $(function (readingCompArray) {
+          /* var readingCompTest = [33, 40, 45, 65, 70, 75, 85, 90, 91, 95]; */
+        $('#container4').highcharts({
 	        title: {
 	            text: 'Reading Comprehension',
 	            x: -20 //center
@@ -36,15 +38,16 @@
 	            data: [50, 59, 73, 76, 82, 84, 87, 89, 90, 93]
 	        }, {
 	            name: 'Student Score',
-	            data: [33, 40, 45, 65, 70, 75, 85, 90, 91, 95]
+	            data: readingCompArray
 	        }, {
 	            name: 'Low Range',
 	            data: [32, 42, 55, 55, 63, 66, 69, 71, 73, 74]
 	        }]
 	    });
 	});
-        
-        $(function  () {
+        /*   These are the parameters for the students scores that will be 
+         * passed into the graphs (mathScore, scienceScore, artsScore)     */
+        $(function  (mathScore, scienceScore, artsScore) {
         Highcharts.Renderer.prototype.symbols.line = function(x, y, width, height) {
     return ['M',x ,y + width / 2,'L',x+height,y + width / 2];
 };
@@ -127,7 +130,8 @@ var chart1 = new Highcharts.Chart({
                    {from:60,to:100,color: 'rgba(204,204,204,.55)'},
                    {from:85,to:100,color: 'rgba(204,204,204,0)'}]
     },
-    series:[{name:'Measure',pointWidth:10,data:[75]},
+    /* mathScore is the variable for the students math score */
+            series:[{name:'Measure',pointWidth:10,data:mathScore},
             {name:'Target',type: 'scatter',data:[80],}]
 });
 
@@ -142,7 +146,8 @@ var chart2 = new Highcharts.Chart({
                    {from:75,to:90,color: 'rgba(153,153,153,.35)'},
                    {from:90,to:100,color: 'rgba(204,204,204,.35)'}]
     },
-    series:[{name:'Measure',pointWidth:10,data:[92]},
+    /* scienceScore is the variable for the students science score */
+    series:[{name:'Measure',pointWidth:10,data:scienceScore},
             {name:'Target',type: 'scatter',data:[95],}]
 });
 
@@ -157,7 +162,8 @@ var chart3 = new Highcharts.Chart({
                    {from:50,to:75,color: 'rgba(153,153,153,.35)'},
                    {from:75,to:100,color: 'rgba(204,204,204,.35)'}]
     },
-    series:[{name:'Measure',pointWidth:10,data:[64]},
+    /* artsScore is the variable for the students arts score */
+    series:[{name:'Measure',pointWidth:10,data:artsScore},
             {name:'Target',type: 'scatter',data:[75],}]
 });
 
