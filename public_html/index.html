@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<head>
+
+    <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title></title>
@@ -33,105 +34,127 @@
     });
 });
     </script>
-    
-    
-    
-   
-</head>
-<body>
-    <div id="header">
-        MSIS
-    </div>
-    <div id="nav">
-        <div class="tabs">
-            <ul class="tab-links">
-        
-                <li class="active"><a href="#tab1">Student Information</a></li>
-                <li><a href="#tab2">Enrollment</a></li>
-                <li><a href="#tab3">Groups</a></li>
-
+    </head>
+    <body>
+    <div id="header"> <img src="img/header.jpg" /> </div>
+    <!--End of header-->
+    <div id="wrapper">
+        <div id="column1">
+          <div id="profile">
+            <ul class="nav">
+              <li class="profilestudentname">FirstName LastName</li>
+              <li><a href="#tab1">Student Information</a></li>
+              <li><a href="#tab2">Enrollment</a></li>
+              <li><a href="#tab3">Groups</a></li>
             </ul>
-
-            <div class="tab-content">
-                <div id="tab1" class="tab active">
-                    <img src="img/cat.JPG" alt="image" height="130" width="110">
-                    
-                    <table class="table1">
-                        <tr>
-                            <th>First Name:</th>
-                            <td>Tardar </td>
-                        </tr>
-                        <tr>
-                            <th>Last Name:</th>
-                            <td>Sauce</td>
-                        </tr>
-                        <tr>
-                            <th>SID:</th>
-                            <td>000-000</td>
-                        </tr>
-                        <tr>
-                            <th>Born:</th>
-                            <td> April 4, 2012</td>
-                        </tr>
-                        <tr>
-                            <th>Gender:</th>
-                            <td>Female</td>
-                        </tr>
-                        
-                    </table>
+            <div class="tabs">
+              <div class="profiletab-content">
+                <div id="tab1" class="tab active"> <img src="img/cat.JPG" alt="image" height="130" width="110">
+                  <table class="table1">
+                    <tr>
+                      <th>First Name:</th>
+                      <td>Tardar </td>
+                    </tr>
+                    <tr>
+                      <th>Last Name:</th>
+                      <td>Sauce</td>
+                    </tr>
+                    <tr>
+                      <th>SID:</th>
+                      <td>000-000</td>
+                    </tr>
+                    <tr>
+                      <th>Born:</th>
+                      <td> April 4, 2012</td>
+                    </tr>
+                    <tr>
+                      <th>Gender:</th>
+                      <td>Female</td>
+                    </tr>
+                  </table>
                 </div>
-
+                <!----End of tab1---->
+                
                 <div id="tab2" class="tab">
-                    <p>Tab #2 Enrollment stuff goes here!</p>
-                    <p>Stuff..</p>
+                  <p>Tab #2 Enrollment stuff goes here!</p>
+                  <p>Stuff..</p>
                 </div>
-                 <div id="tab3" class="tab">
-                    <p>Tab #3 Groups stuff goes here!</p>
-                    <p>Stuff..</p>
+                <!----End of tab2---->
+                <div id="tab3" class="tab">
+                  <p>Tab #3 Groups stuff goes here!</p>
+                  <p>Stuff..</p>
                 </div>
+                <!----End of tab3----> 
+              </div>
+              <!----End of tab content----> 
             </div>
-        </div>
-
-
-         <div class="tabs">
-            <ul class="tab-links">
+            <!----End of tabs----> 
             
-                <li class="active"><a href="#tab4">Term 1</a></li>
-                <li><a href="#tab5">Term 2</a></li>
-                <li><a href="#tab6">Term 3</a></li>
-
+          </div>
+          <!--End of profile-->
+          
+          <div id="schedule">
+            <ul class="nav">
+              <li class="scheduleschoolname">Avila Elementary</li>
+              <li><a href="#tab4">Term 1</a></li>
+              <li><a href="#tab5">Term 2</a></li>
+              <li><a href="#tab6">Term 3</a></li>
+              <li><a href="#tab7">Term 4</a></li>
             </ul>
-      <div class="tab-content1">
+            
+              <div class="scheduletab-content">
                 <div id="tab4" class="tab">
-                    <p>Tab #4 Term stuff goes here!</p>
-                    <p>Stuff..</p>
+                  <p>Tab #4 Term 1 stuff goes here!</p>
+                  <p>Stuff..</p>
                 </div>
                 <div id="tab5" class="tab">
-                    <p>Tab #5 Term stuff goes here!</p>
-                    <p>Stuff..</p>
+                  <p>Tab #5 Term 2 stuff goes here!</p>
+                  <p>Stuff..</p>
                 </div>
                 <div id="tab6" class="tab">
-                    <p>Tab #6 Term stuff goes here!</p>
-                    <p>Stuff..</p>
+                  <p>Tab #6 Term 3 stuff goes here!</p>
+                  <p>Stuff..</p>
                 </div>
-      </div>
+                <div id="tab7" class="tab">
+                  <p>Tab #7 Term 4 stuff goes here!</p>
+                  <p>Stuff..</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--End of schedule--> 
         </div>
+        <!--End of column1-->
+        <div id="column2">
+          <div id="assessment">
+            <div id="search">Search box goes here</div>
+            <p class="chromeheader">Assessment </p>
+            <div class="chromebody">
+              <div id="container1">
+                <p>Visualization 1: ELA SAGE Summative </p>
+              </div>
+              <br />
+              <div id="container2">
+                <p>Visualization 2: MA SAGE Summative </p>
+              </div>
+              <br />
+              <div id="container3">
+                <p>Visualization 3: SCI SAGE Summative </p>
+              </div>
+              <br />
+              <div id="container4">
+                <p>Visualization 4: DRP SAGE Summative </p>
+              </div>
+            </div>
+            <!--End of chromebody--> 
+          </div>
+          <!--End of assessment--> 
+        </div>
+        <!--End of column2--> 
+
     </div>
-
-    <div id="academic">  
-        <div id="container1"></div> 
-        <div id="container2"></div>
-        <div id="container3"></div>
-        <div id="container4"></div>
-    </div>   
-
-    <div id="footer">
-        Copyright &copy 2015 MSIS
-    </div>
-
-
-
-
-
+    <!--End of wrapper-->
+    <div id="footer"> <img src="img/footer.jpg" /> </div>
+    <!--End of footer-->
 </body>
 </html>
