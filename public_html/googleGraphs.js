@@ -51,6 +51,7 @@
         $(function  (studentGrade, mathScore, scienceScore, artsScore) {
         Highcharts.Renderer.prototype.symbols.line = function(x, y, width, height) {
     return ['M',x ,y + width / 2,'L',x+height,y + width / 2];
+    
    /* var derivedArts = 1;
     artsScore = 425;
     studentGrade = 7
@@ -149,16 +150,16 @@ Highcharts.setOptions({
             style:{
                 fontSize:'8px'
             },
-            formatter:function(){
+         /*   formatter:function(){
                 if (this.isLast){
                     return this.value + "  ";
                 }
                 else{
                     return this.value;
                 }
-            }
-        }
-    },
+            } */
+        }  
+    }, 
     tooltip:{
         enabled:true,
         backgroundColor:'rgba(255, 255, 255, .85)',
@@ -192,52 +193,58 @@ var chart1 = new Highcharts.Chart({
     chart:{renderTo:'container1'},
     xAxis:{categories:['Math']},
     yAxis:{
-        max:4,
-        labels:{y:10,style:{fontSize:'8px'}},    
-        plotBands:[{from:0,to:1,color: 'rgba(103,103,103,.35)'},
-                   {from:1,to:2,color: 'rgba(153,153,153,.35)'},
-                   {from:2,to:3,color: 'rgba(175,175,175,.35)'},
-                   {from:3,to:4,color: 'rgba(204,204,204,.35)'}]
+        min:1,
+        max:5,
+        labels:{y:0,style:{fontSize:'8px'},    
+            align: 'center',
+                x: 50,
+                y: 8, 
+            },       
+        plotBands:[{from:1,to:2,color: 'rgba(5,5,5,.35)'},
+                   {from:2,to:3,color: 'rgba(73,73,73,.35)'},
+                   {from:3,to:4,color: 'rgba(125,125,125,.35)'},
+                   {from:4,to:5,color: 'rgba(204,204,204,.35)'}]
     },
     /* mathScore is the variable for the students math score */
-            series:[{name:'Measure',pointWidth:10,data:[2.5]},
-            {name:'Target',type: 'scatter',data:[3],}
+            series:[{name:'Scaled Score =' + mathScore,pointWidth:8,data:[3.25]},
+            {name:'Target',type: 'scatter',fontSize:'18px',data:[3.5],}
         ]
 }, function (chart) { // on complete
 
         chart.renderer.rect(100, 20, 100, 20, 5)
             .attr({
                 'stroke-width': 2,
-                stroke: 'red',
+                stroke: 'black',
                 fill: 'transparent',
                 zIndex: 3,
                 align: 'left',
                 x: 288,
-                y: 20
-            })
+                y: 20.8
+            }) 
             .add();
+    
 
     });
 //-------------------------------------------------------
 var chart2 = new Highcharts.Chart({
     chart:{renderTo:'container2'},
     xAxis:{categories:['Science']},
-    yAxis:{
-        max:4,
-        labels:{y:10,style:{fontSize:'8px'},
-                align: 'right',
-                x: -50,
-                y: 0
-            },   
-        plotBands:[{from:0,to:1,color: 'rgba(103,103,103,.35)'},
-                   {from:1,to:2,color: 'rgba(153,153,153,.35)'},
-                   {from:2,to:3,color: 'rgba(175,175,175,.35)'},
-                   {from:3,to:4,color: 'rgba(204,204,204,.35)'}]
-    }, 
+      yAxis:{
+        min:1,
+        max:5,
+        labels:{y:0,style:{fontSize:'8px'},    
+            align: 'center',
+                x: 50,
+                y: 8, 
+            },       
+        plotBands:[{from:1,to:2,color: 'rgba(5,5,5,.35)'},
+                   {from:2,to:3,color: 'rgba(73,73,73,.35)'},
+                   {from:3,to:4,color: 'rgba(125,125,125,.35)'},
+                   {from:4,to:5,color: 'rgba(204,204,204,.35)'}]
+    },
     /* scienceScore is the variable for the students science score */
-    series:[{name:'Student Scaled Score' + '250',pointWidth:10,data:[2.75]},
-            {name:'Target Range 2-3',type: 'scatter',data:[2],},
-             {name:'Target Range 2-3',type: 'scatter',data:[3],}
+    series:[{name:'Student Scaled Score' + '250',pointWidth:8,data:[3.75]},
+             {name:'Target Range 3',type: 'scatter',pointSize:30, data:[3.5],}
         ]
 }, function (chart) { // on complete
 
@@ -250,7 +257,7 @@ var chart2 = new Highcharts.Chart({
                 zIndex: 3,
                 align: 'left',
                 x: 288,
-                y: 19.5
+                y: 20.8
             })
             .add();
 
@@ -260,20 +267,35 @@ var chart2 = new Highcharts.Chart({
 var chart3 = new Highcharts.Chart({
     chart:{renderTo:'container3'},
     xAxis:{categories:['Language Arts']},
-    yAxis:{
-        max:3,
-        betweenTick: true,
-        labels:{y:10,style:{fontSize:'8px'}},   
-        plotBands:[{from:0,to:1,color: 'rgba(103,103,103,.35)'},
-                   {from:1,to:2,color: 'rgba(153,153,153,.35)'},
-                   {from:2,to:3,color: 'rgba(175,175,175,.35)'},
-                   {from:3,to:4,color: 'rgba(204,204,204,.35)'}]
+      yAxis:{
+        min:1,
+        max:5,
+        labels:{y:0,style:{fontSize:'8px'},    
+            align: 'center',
+                x: 50,
+                y: 8, 
+            },       
+        plotBands:[{from:1,to:2,color: 'rgba(5,5,5,.35)'},
+                   {from:2,to:3,color: 'rgba(73,73,73,.35)'},
+                   {from:3,to:4,color: 'rgba(125,125,125,.35)'},
+                   {from:4,to:5,color: 'rgba(204,204,204,.35)'}]
     },
     /* artsScore is the variable for the students arts score */
-    series:[{name:'Measure',pointWidth:2,data:4},
-            {name:'Target',type: 'scatter',data:[2],}]
+    series:[{name:'Measure',pointWidth:8,data:[4.5]},
+            {name:'Target',type:'scatter',data:[3.5],}]
+},function (chart) { // on complete
+
+        chart.renderer.rect(100, 20, 100, 20, 5)
+            .attr({
+                'stroke-width': 2,
+                stroke: 'black',
+                fill: 'transparent',
+                zIndex: 3,
+                align: 'left',
+                x: 288,
+                y: 20.8
+            })
+            .add();
+
+    });
 });
-
-
-
-        });
