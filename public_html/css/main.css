@@ -132,6 +132,54 @@ textarea {
     display:inline-block;
 }
 
+/*----- Tab Links -----*/
+/* Clearfix */
+.tab-links:after {
+    display:block;
+    clear:both;
+    content:'';
+}
+
+.tab-links li {
+    margin:0px 0px;
+    float:left;
+    list-style:none;
+	width: 10em;/*NEW*/
+	padding: 5 px; /*NEW*/
+	margin-right: 5px; /*NEW*/
+	height: 30px; /*NEW*/
+	text-align: center; /*NEW*/
+}
+
+.tab-links a {
+    padding:5px 5px;
+    display: block;
+    border:1px solid #A3A3A3; /*NEW*/
+	border-bottom:none;	/*NEW*/
+    background-color: #EAEAEA; /*NEW*/
+	text-decoration:none; /*NEW*/
+	height: 30px; /*NEW*/
+    margin: 0;
+    font-size:14px;
+    font-weight:600;
+    color: #333; /*NEW*/
+    transition:all linear 0.15s;
+}
+
+.tab-links a:hover {
+    background:#F0F0F0;
+    text-decoration:none;
+}
+
+li.active a, li.active a:hover {
+    background:#fff;
+    color:#C0C0C0;
+}
+
+
+
+
+
 
 /*----- Content of Tabs -----*/
 .profiletab-content {
@@ -148,7 +196,6 @@ textarea {
     background:#fff;
     overflow: scroll;
     height: 250px;
-    
 }
 
 .tab {
@@ -198,34 +245,6 @@ p {
 	
 
 
-/*----- Profile Tab Links -----*/
-#profile ul.nav {
-	margin-left: 0px;
-	padding-left:0px;
-	list-style:none;
-	border-bottom: 1px solid #000;
-	float:left;
-	width:100%;
-}
-
-#profile ul.nav li {
-	width: 10em;
-	padding: 5 px;
-	margin-right: 5px;
-	height: 30px;
-	text-align: center;
-	float:left;
-}
-
-#profile ul.nav a{
-	border:1px solid #A3A3A3;
-	border-bottom:none;	
-	background-color: #EAEAEA;
-	text-decoration:none;
-	height: 30px;
-	display:block;
-	color: #333;
-}
 
 
 
@@ -344,4 +363,53 @@ p {
 .classperiod {
     height:100px;
     width:720px;
+}
+/* ==========================================================================
+   Searh Bar
+   ========================================================================== */
+#tfheader{
+   // background-color:#c3dfef;
+}
+#tfnewsearch{
+    float:right;
+    padding:20px;
+}
+.tftextinput{
+	margin: 0;
+	padding: 5px 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+	border:1px solid #0076a3; border-right:0px;
+	border-top-left-radius: 5px 5px;
+	border-bottom-left-radius: 5px 5px;
+}
+.tfbutton {
+	margin: 0;
+	padding: 5px 15px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:14px;
+	outline: none;		
+        cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	color: #ffffff;
+	border: solid 1px #0076a3; border-right:0px;
+	background: #0095cd;
+	background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+	background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+	border-top-right-radius: 5px 5px;
+	border-bottom-right-radius: 5px 5px;
+}
+.tfbutton:hover {
+	text-decoration: none;
+	background: #007ead;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+	background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+}
+/* Fixes submit button height problem in Firefox */
+.tfbutton::-moz-focus-inner {
+        border: 0;
+}
+.tfclear{
+	clear:both;
 }
